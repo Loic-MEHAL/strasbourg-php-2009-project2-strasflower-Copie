@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent()}} Connexion
+{% endblock %}
+
+{% block content %}
+<div class="mt-5" id="formular">
+    <form action="/Login/index" method="POST">
+        <fieldset>
+            <legend class="text-center">Connexion</legend>
+            <p class="text-center">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="hackermanjacky@gmail.com" value="">
+            </p>
+            <p class="text-center">
+                <label for="password">Mot de passe</label>
+                <input id="password" type="password" name="password" placeholder="********" value="">
+            </p>
+            <p>
+                <button type="submit" class="btn btn-primary">Connectez-vous</button>
+            </p>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

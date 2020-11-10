@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig'%}
+    {% block content %}
+    <div>
+        <h1>Commandes</h1>
+        {% for command in commandsUser %}
+            <div class="card col-3">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-2">Commande n°{{ command.id }}</h5>
+                    <p class="card-text">{{ command.date }}</p>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <button type="button" class="col btn btn-ultra-voilet btn-rounded" data-toggle="modal" data-target="#commande{{command.id}}">
+                            Voir le détail
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="commande{{command.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <!--Affichage dans modal -->
+                                    {% block content2 %}
+                                        {% include ('User/commandUser.html.twig') %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endblock %}

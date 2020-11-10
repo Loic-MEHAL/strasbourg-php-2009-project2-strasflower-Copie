@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig';
+
+    if(empty($_SESSION["email"])) 
+        {
+            header('Location: /index.php');
+            exit();
+        }
+%}
+{% block title %}
+    {{ parent()}} Deconnexion
+{% endblock %}
+
+{% block content %}
+    {% session_start();
+    session_unset();
+    session_destroy();
+    header('Location: ./Home/index');%}
+{% endblock %}

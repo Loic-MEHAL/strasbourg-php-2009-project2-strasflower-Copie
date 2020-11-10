@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig'%}
+
+    {% block title %}
+        {{ parent()}} Profil client
+    {% endblock %}
+   
+        {% block content %}
+                Nom {{user.nom}} </br>
+                Prénom {{user.prenom}}</br>
+                Email {{user.email}}</br>
+                Mot de passe {{user.password}}</br>
+                Adress {{user.adress}}</br>
+                Age {{user.age}}</br>
+                Sexe{{user.sexe}}</br>
+
+                <a href="/user/editUser/{{ user.id }}">Modifier le profil</a>
+                <a href="/user/deleteUser/{{ user.id }}">Supprimer le profil</a>
+
+                <a class="nav-link" href="/CommandsUser/showAll/{{ user.id }}">Liste Commandes</a>
+
+        {% endblock %}

@@ -1,0 +1,60 @@
+<div class=" container header"> 
+
+<!--Logo + titre -->
+    <div class="logo_titre row">
+        <img class="logo image-fluid col-2" src="/assets/images/logo.png" alt="logo">
+        <div class="fond-titre col-10 d-flex justify-content-center align-items-center" alt="fond du titre">
+            <a href="/">
+                <img class="titre img-fluid" src="/assets/images/titre.png" alt="titre">
+            </a>
+        </div>
+    </div>  
+<!-- Navbar -->
+    <nav class="navbar mt-3 navbar-expand-xl navbar-light bg-transparent">
+<!--Menu burger -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto text-between">
+<!--Liste du menu burger --> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Articles/showArticles">Liste Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Design/design">Composition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cart/cart">Mon Panier</a>
+                    </li>
+                </ul>
+<!-- Zone de recherche -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Rose, Tulipe ..." aria-label="Search">
+<!-- Boutton lancer recherche -->
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
+            </div>
+<!-- Boutton de connexion et déconnexion -->
+            {% if session.user != "disconnect" %}
+                <li class="list-group">
+                    <a class="badge badge-pill badge-primary m-1" href="/User/registration">Inscription</a>
+                </li>
+                <li class="list-group">
+                    <a class="badge badge-pill badge-success m-1" href="/Login/connection">Connexion</a>
+                </li>
+            {% endif %}
+            {% if session.user == "disconnect" %}
+                <li class="list-group">
+                    <a class="badge badge-pill badge-danger m-1" href="/User/logout">Déconnexion</a>
+                </li>
+                <li class="list-group">
+                    <a class="badge badge-pill badge-info m-1" href="/User/indexUser">Profil</a>
+                </li>
+            {% endif %}
+        </nav>
+    </div>
+</div(header)>

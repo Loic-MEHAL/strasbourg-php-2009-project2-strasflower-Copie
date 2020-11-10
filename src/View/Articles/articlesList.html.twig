@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+    {% block title %}
+        {{ parent()}} Liste des Articles
+    {% endblock %}
+
+    {% block content %}
+        {% for article in articles %}
+            Nom {{article.nom}} </br>
+            Description {{article.description}}</br>
+            Image <img id="logo"src="/assets/images/articles/{{article.image}}"> </br>
+        {% endfor %}
+    {% endblock %}
